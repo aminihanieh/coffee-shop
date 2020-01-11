@@ -36,7 +36,9 @@ header{background: white;
         justify-content: space-between;
         align-items: center;
         padding: 0;
-        margin: 0 200px;
+       width: 80%;
+       margin: auto;
+
 
 
         li {
@@ -47,7 +49,7 @@ header{background: white;
 
             a {
                 color: $fontBlack;
-                font-size: 1.5em !important;
+                font-size: $a;
                 display: block;
             }
 
@@ -68,6 +70,10 @@ header{background: white;
     background-image: url("../../assets/img/bg.jpg");
     background-size: cover;
     background-position: fixed;
+@media (max-width: 991px) {
+    padding-top: 20px;
+} 
+
 
     article {
         width: 70%;
@@ -78,16 +84,16 @@ header{background: white;
         }
 
         h4 {
-            font-size: 2em;
+            font-size: $h4;
         }
 
         h1 {
-            font-size: 4em;
+            font-size: $h1;
             text-transform: uppercase;
         }
 
         p {
-            font-size: 1em;
+            font-size: $p;
             width: 80%;
             margin: 0 auto 40px;
 
@@ -101,7 +107,7 @@ header{background: white;
 }
 .recommendation{
     padding-top: 50px;
-    height: 400px;
+   min-height: 400px;
     background: white;
     .wrapper{
         display: flex;
@@ -111,7 +117,7 @@ header{background: white;
             text-align: left;
             h2{
                 text-transform: uppercase;
-                line-height: 2em;
+                line-height: $h2;
                 display: inline-block;
 
             }
@@ -122,15 +128,70 @@ header{background: white;
             }
         }
         .pics{
+           .imgBox{
+
             overflow: hidden;
-            height: 300px;
+            // height: auto;
+            // max-height: 300px;
 
-             img{
+        
+                position: relative;
+                padding-top: 56.25%; /* 16:9 Aspect Ratio */
+              
+              img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right:0;
+                width: 90%;
                 height: auto;
-                width: 100%;
+                margin: 5px auto 0;
+              }
 
+            //  img{
+            //     height: auto;
+            //     width: 100%;
+            //  }
             }
         }
+    }
+
+}
+
+
+@media screen and (max-width:1199px){
+    h1{
+        font-size: $h1-s !important;
+    }
+    h2{
+        font-size: $h2-s !important;
+    }
+    h4{
+        font-size: $h4-s !important;
+    }
+    p{
+        font-size: $p-s !important;
+    }
+    a{
+        font-size: $a-s !important;
+    }
+
+}
+@media screen and (max-width:575px){
+    h1{
+        font-size: $h1-xs !important;
+    }
+    h2{
+        font-size: $h2-xs !important;
+    }
+    h4{
+        font-size: $h4-xs !important;
+    }
+    p{
+        font-size: $p-xs !important;
+    }
+    a{
+        font-size: $a-xs !important;
     }
 
 }
